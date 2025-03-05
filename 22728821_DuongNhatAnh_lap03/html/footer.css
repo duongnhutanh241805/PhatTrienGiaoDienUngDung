@@ -1,0 +1,21 @@
+.flex-container {
+    background-color: rgb(32, 31, 31);
+    color: #ffffff;
+    border: 1px solid #000000;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+  }
+  .o1duoi{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(32, 31, 31);
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+  }
+  .o1tren{
+    height: 150px;
+  }

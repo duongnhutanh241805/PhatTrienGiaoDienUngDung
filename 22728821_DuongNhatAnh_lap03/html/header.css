@@ -1,0 +1,58 @@
+.flex-container {
+    border: 1px solid #000000;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    gap: 100px;
+  }
+  .logo{
+    margin-left: 30px;
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .logo > div {
+    width: 25px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+    margin: 2px;
+
+  }
+  .flex-container > input{
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+  }
+  .link{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .link > a {
+    color: #a8a8a8;
+    text-decoration: none;
+    width: 100px;
+    margin: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 15px;
+  }
+  .chatbox{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap:20px
+  }
+  .chatbox > div:first-child {
+    justify-items: center;
+    align-items: center;
+    background-color: #fa90ca88;   
+    color: #ec399a;
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: start;
+    align-items: center;
+  }
+  
