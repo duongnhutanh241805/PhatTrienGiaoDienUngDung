@@ -1,6 +1,8 @@
 import React from 'react'
 import './Nav.css'
-
+import  Chuong from '../../img/Bell 1.png'
+import Avata from '../../img/Avatar (1).png'
+import Chamhoi from '../../img/Question 1.png'
 const nav = () => {
   return (
     <div className='main_nav'>
@@ -10,9 +12,9 @@ const nav = () => {
           <h2>Dashboard</h2>
           <div style={{display:'flex',justifyContent:'space-around',alignItems:'center',width:'35%'}}>
             <input type="text" placeholder="Search..." className="search-box" />
-          <p>33</p>
-          <p>?</p>
-          <img src="" alt="avata" />
+          <img src={Chuong} />
+          <img src={Chamhoi} />
+          <img src={Avata} />
           </div>
           
         </header>

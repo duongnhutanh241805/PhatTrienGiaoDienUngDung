@@ -1,11 +1,11 @@
 import React from 'react'
 import './Header.css'
-
+import logo from '../../img/Image 1858.png'
  const Header = () => {
   return (
     <div className='main_head'>
       <aside className="sidebar">
-        <h2 className="logo">Logo</h2>
+        <img src={logo} style={{width:'40%',height:'10%'}}/>
         <nav className="menu">
           <ul>
             <li className="active">Dashboard</li>
