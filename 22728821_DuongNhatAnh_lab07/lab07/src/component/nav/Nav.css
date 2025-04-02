@@ -1,9 +1,10 @@
 .main_nav{
-    border: 1px solid#000000;
+  border: 1px solid#b3b3b3a4;
+    border-left: 1px solid#ffffff;
     height: 100%;
 }
 .khung{
-    border: 1px solid#000000;
+  border-bottom: 1px solid#b3b3b3a4;
 }
 .main_find {
     flex-grow: 1;

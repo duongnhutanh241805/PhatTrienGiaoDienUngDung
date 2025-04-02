@@ -12,6 +12,8 @@ import './Header.css'
             <li>Projects</li>
             <li>Teams</li>
             <li>Analytics</li>
+            <li>Messages</li>
+            <li>Intergrations</li>
           </ul>
         </nav>
       </aside>
