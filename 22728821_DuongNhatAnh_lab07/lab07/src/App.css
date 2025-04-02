@@ -1,0 +1,17 @@
+.main_app{
+    display: flex;
+    height: 700px;
+ 
+    
+}
+.head_main{
+    width: 20%;
+    height: 100%;
+    
+  
+}
+.content_main{
+    width: 75%;
+    height: 100%;
+    
+}
