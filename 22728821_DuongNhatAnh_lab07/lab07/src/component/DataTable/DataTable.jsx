@@ -1,16 +1,25 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import "./DataTable.css";
 import file from "../../img/File text 1.png";
 import In from "../../img/Download.png";
 import Out from "../../img/Move up.png";
+
+import anh1 from "../../img/Avatar (1).png";
+import anh2 from "../../img/Avatar (2).png";
+import anh3 from "../../img/Avatar (3).png";
+import anh4 from "../../img/Avatar (4).png";
+import anh5 from "../../img/Avatar (5).png";
+import anh6 from "../../img/Avatar 313.png";
+import anh7 from "../../img/Avatar.png";
 const DataTable = () => {
-  const customers = [
+  const nguoimua = [
     {
       name: "TiTi",
       company: "App",
       value: "$359",
       date: "10/08/2023",
       status: "New",
+      anh: anh1,
     },
     {
       name: "ZiZi",
@@ -18,6 +27,7 @@ const DataTable = () => {
       value: "$747",
       date: "24/07/2023",
       status: "New",
+      anh: anh2,
     },
     {
       name: "UiUi",
@@ -25,6 +35,7 @@ const DataTable = () => {
       value: "$564",
       date: "08/08/2023",
       status: "In-progress",
+      anh: anh3,
     },
     {
       name: "AiAi",
@@ -32,13 +43,27 @@ const DataTable = () => {
       value: "$541",
       date: "31/08/2023",
       status: "In-progress",
+      anh: anh4,
     },
   ];
+
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://67f4f397913986b16fa27eb8.mockapi.io/customers")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setCustomers(data);
+        }
+      })
+      .catch((error) => console.error("Loi goi API:", error));
+  }, []);
 
   return (
     <div>
       <section className="report">
-        <p
+        <div
           style={{
             display: "flex",
             alignItems: "center",
@@ -68,7 +93,8 @@ const DataTable = () => {
               Export
             </button>
           </div>
-        </p>
+        </div> <br />
+
         <table>
           <thead>
             <tr>
@@ -82,7 +108,10 @@ const DataTable = () => {
           <tbody>
             {customers.map((c, i) => (
               <tr key={i}>
-                <td>{c.name}</td>
+                <td style={{ display: "flex", alignItems: "center" }}>
+                  <img src={c.anh} style={{ marginRight: "10px" }} />
+                  {c.name}
+                </td>
                 <td>{c.company}</td>
                 <td>{c.value}</td>
                 <td>{c.date}</td>
