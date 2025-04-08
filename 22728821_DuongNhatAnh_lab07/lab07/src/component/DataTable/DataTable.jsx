@@ -54,7 +54,7 @@ const DataTable = () => {
       .then((res) => res.json())
       .then((data) => {
         const avatars = [anh1, anh2, anh3, anh4, anh5, anh6, anh7];
-        const merged = data.slice(0, 20).map((item, index) => ({
+        const merged = data.slice(0, 6).map((item, index) => ({
           ...item,
           anh: avatars[index % avatars.length],
         }));

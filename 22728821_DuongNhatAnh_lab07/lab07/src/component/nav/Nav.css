@@ -1,6 +1,6 @@
 .sidebar {
   width: 220px;
-  background-color: #ffffff;
+
   color: rgb(118, 117, 117);
   padding: 20px;
 }
@@ -13,7 +13,7 @@
 
 }
 
-.menu li {
+.menu li  {
   display: flex;
   align-items: center;
   margin-left: 10px;
@@ -23,6 +23,7 @@
   margin-bottom: 10px;
   transition: 0.2s;
 }
+
 .menu li img{
   margin-right: 20px;
 }

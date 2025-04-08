@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Nav.css";
 import logo from "../../img/Image 1858.png";
 import li1 from "../../img/Squares four 1.png";
@@ -16,28 +17,88 @@ const nav = () => {
         <nav className="menu">
           <ul>
             <li className="active">
-              <img src={li1} />
-              Dashboard
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li1} />
+                Dashboard
+              </NavLink>
             </li>
             <li>
-              <img src={li2} />
-              Projects
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/projects"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li2} />
+                Projects
+              </NavLink>
             </li>
             <li>
-              <img src={li3} />
-              Teams
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/teams"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li3} />
+                Teams
+              </NavLink>
             </li>
             <li>
-              <img src={li4} />
-              Analytics
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/analytics"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li4} />
+                Analytics
+              </NavLink>
             </li>
             <li>
-              <img src={li5} />
-              Message
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/messages"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li5} />
+                Messages
+              </NavLink>
             </li>
             <li>
-              <img src={li6} />
-              Intergrations
+              <NavLink
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: " rgb(118, 117, 117)",
+                }}
+                to="/intergrations"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                <img src={li6} />
+                Intergrations
+              </NavLink>
             </li>
           </ul>
         </nav>
