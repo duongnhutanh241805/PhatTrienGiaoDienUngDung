@@ -4,6 +4,37 @@ import file from "../../img/File text 1.png";
 import In from "../../img/Download.png";
 import Out from "../../img/Move up.png";
 const DataTable = () => {
+  const customers = [
+    {
+      name: "TiTi",
+      company: "App",
+      value: "$359",
+      date: "10/08/2023",
+      status: "New",
+    },
+    {
+      name: "ZiZi",
+      company: "SmoozeShift",
+      value: "$747",
+      date: "24/07/2023",
+      status: "New",
+    },
+    {
+      name: "UiUi",
+      company: "Telecom",
+      value: "$564",
+      date: "08/08/2023",
+      status: "In-progress",
+    },
+    {
+      name: "AiAi",
+      company: "Corporation",
+      value: "$541",
+      date: "31/08/2023",
+      status: "In-progress",
+    },
+  ];
+
   return (
     <div>
       <section className="report">
@@ -49,25 +80,23 @@ const DataTable = () => {
             </tr>
           </thead>
           <tbody>
-            {/* Dữ liệu giả mẫu */}
-            <tr>
-              <td>Elizabeth Lee</td>
-              <td>AvatarSystems</td>
-              <td>$359</td>
-              <td>10/07/2023</td>
-              <td>
-                <span className="status new">New</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Carlos Garcia</td>
-              <td>SmoozeShift</td>
-              <td>$747</td>
-              <td>24/07/2023</td>
-              <td>
-                <span className="status completed">Completed</span>
-              </td>
-            </tr>
+            {customers.map((c, i) => (
+              <tr key={i}>
+                <td>{c.name}</td>
+                <td>{c.company}</td>
+                <td>{c.value}</td>
+                <td>{c.date}</td>
+                <td>
+                  <span
+                    className={`status ${c.status
+                      .toLowerCase()
+                      .replace(" ", "-")}`}
+                  >
+                    {c.status}
+                  </span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>
