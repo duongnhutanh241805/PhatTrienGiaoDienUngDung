@@ -1,9 +1,9 @@
 import React from 'react'
 import './Intergrations.css'
+
 import Nav from "../../component/nav/Nav";
 import Header from "../../component/header/Header";
-import Overview from "../../component/Overview/Overview";
-import DataTable from "../../component/DataTable/DataTable";
+
 const Intergrations = () => {
   return (
     <div className="dashboard-container">
@@ -13,8 +13,7 @@ const Intergrations = () => {
     
     <div className="benphai">
       <Header></Header>
-      <Overview></Overview>
-      <DataTable></DataTable>
+      Intergrations
     </div>
   </div>
   )

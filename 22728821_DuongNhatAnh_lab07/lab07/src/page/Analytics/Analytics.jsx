@@ -1,10 +1,20 @@
-import React from 'react'
-import './Analytics.css'
-
+import React from "react";
+import "./Analytics.css";
+import Nav from "../../component/nav/Nav";
+import Header from "../../component/header/Header";
 const Analytics = () => {
   return (
-    <div>Analytics</div>
-  )
-}
+    <div className="dashboard-container">
+      <div className="bentrai">
+        <Nav></Nav>
+      </div>
 
-export default Analytics
+      <div className="benphai">
+        <Header></Header>
+        Analytics
+      </div>
+    </div>
+  );
+};
+
+export default Analytics;
