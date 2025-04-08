@@ -53,11 +53,14 @@ const DataTable = () => {
     fetch("https://67f4f397913986b16fa27eb8.mockapi.io/customers")
       .then((res) => res.json())
       .then((data) => {
-        if (data.length > 0) {
-          setCustomers(data);
-        }
+        const avatars = [anh1, anh2, anh3, anh4, anh5, anh6, anh7];
+        const merged = data.slice(0, 20).map((item, index) => ({
+          ...item,
+          anh: avatars[index % avatars.length],
+        }));
+        setCustomers(merged);
       })
-      .catch((error) => console.error("Loi goi API:", error));
+      .catch((error) => console.error("Lỗi gọi API:", error));
   }, []);
 
   return (
@@ -93,8 +96,8 @@ const DataTable = () => {
               Export
             </button>
           </div>
-        </div> <br />
-
+        </div>{" "}
+        <br />
         <table>
           <thead>
             <tr>
