@@ -11,7 +11,7 @@ const Messages = () => {
     </div>
     
     <div className="benphai">
-      <Header></Header>
+      <Header bien={"Messages"}></Header>
       Messages
     </div>
   </div>

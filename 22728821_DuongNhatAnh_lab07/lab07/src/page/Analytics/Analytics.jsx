@@ -10,7 +10,7 @@ const Analytics = () => {
       </div>
 
       <div className="benphai">
-        <Header></Header>
+        <Header bien={"Analytics"}></Header>
         Analytics
       </div>
     </div>

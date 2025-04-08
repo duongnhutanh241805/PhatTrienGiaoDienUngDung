@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import "./DataTable.css";
 
 import EditModal from "../EditModal/EditModal";
+import AddModal from "../AddModal/AddModal";
 
 import file from "../../img/File text 1.png";
 import In from "../../img/Download.png";
@@ -56,6 +57,8 @@ const DataTable = () => {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const [showAddModal, setAddShowModal] = useState(false);
+
   useEffect(() => {
     fetch("https://67f4f397913986b16fa27eb8.mockapi.io/customers")
       .then((res) => res.json())
@@ -79,6 +82,9 @@ const DataTable = () => {
     setShowModal(false);
     setSelectedCustomer(null);
   };
+
+  const handleAdd = () => setAddShowModal(true);
+  const closeAddModal = () => setAddShowModal(false);
 
   return (
     <div>
@@ -112,6 +118,7 @@ const DataTable = () => {
               <img src={Out} />
               Export
             </button>
+            <button onClick={handleAdd}>Add User</button>
           </div>
         </div>{" "}
         <br />
@@ -146,7 +153,10 @@ const DataTable = () => {
                   </span>
                 </td>
                 <td>
-                  <button className="iconCreate"  onClick={() => handleCreate(c)}>
+                  <button
+                    className="iconCreate"
+                    onClick={() => handleCreate(c)}
+                  >
                     <img src={Create} />
                   </button>
                 </td>
@@ -158,6 +168,7 @@ const DataTable = () => {
       {showModal && (
         <EditModal customer={selectedCustomer} onClose={closeModal} />
       )}
+      {showAddModal && <AddModal onClose={closeAddModal} />}
     </div>
   );
 };

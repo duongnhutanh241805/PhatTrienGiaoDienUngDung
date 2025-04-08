@@ -12,7 +12,7 @@ const Intergrations = () => {
     </div>
     
     <div className="benphai">
-      <Header></Header>
+      <Header bien={"Intergrations"}></Header>
       Intergrations
     </div>
   </div>

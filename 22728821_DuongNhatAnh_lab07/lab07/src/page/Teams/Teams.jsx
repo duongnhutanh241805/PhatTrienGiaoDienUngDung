@@ -10,7 +10,7 @@ const Teams = () => {
       </div>
 
       <div className="benphai">
-        <Header></Header>
+        <Header bien={"Teams"}></Header>
         Teams
       </div>
     </div>

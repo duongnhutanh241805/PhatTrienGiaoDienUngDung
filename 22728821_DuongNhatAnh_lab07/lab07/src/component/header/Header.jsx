@@ -4,7 +4,7 @@ import "./Header.css";
 import Chuong from "../../img/Bell 1.png";
 import Avata from "../../img/Avatar (1).png";
 import Chamhoi from "../../img/Question 1.png";
-const Header = () => {
+const Header = ({ bien }) => {
   return (
     <div>
       <header className="header">
@@ -16,7 +16,7 @@ const Header = () => {
             fontSize: "20px",
           }}
         >
-          Dashboard
+          {bien}
         </p>
         <div className="right">
           <input type="text" className="search-box" placeholder="Search..." />

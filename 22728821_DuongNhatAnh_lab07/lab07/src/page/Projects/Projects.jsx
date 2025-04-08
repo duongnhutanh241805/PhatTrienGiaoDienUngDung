@@ -10,7 +10,7 @@ const Projects = () => {
     </div>
     
     <div className="benphai">
-      <Header></Header>
+      <Header bien={"Projects"}></Header>
       Projects
     </div>
   </div>

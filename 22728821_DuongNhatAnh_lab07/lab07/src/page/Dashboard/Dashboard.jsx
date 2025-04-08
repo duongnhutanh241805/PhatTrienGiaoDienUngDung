@@ -12,7 +12,7 @@ const Dashboard = () => {
       </div>
       
       <div className="benphai">
-        <Header></Header>
+        <Header bien={"Dashboard"}></Header>
         <Overview></Overview>
         <DataTable></DataTable>
       </div>
