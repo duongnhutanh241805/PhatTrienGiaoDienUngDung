@@ -1,5 +1,8 @@
 import { React, useEffect, useState } from "react";
 import "./DataTable.css";
+
+import EditModal from "../EditModal/EditModal";
+
 import file from "../../img/File text 1.png";
 import In from "../../img/Download.png";
 import Out from "../../img/Move up.png";
@@ -11,6 +14,7 @@ import anh4 from "../../img/Avatar (4).png";
 import anh5 from "../../img/Avatar (5).png";
 import anh6 from "../../img/Avatar 313.png";
 import anh7 from "../../img/Avatar.png";
+import Create from "../../img/create.png";
 const DataTable = () => {
   const nguoimua = [
     {
@@ -49,6 +53,9 @@ const DataTable = () => {
 
   const [customers, setCustomers] = useState([]);
 
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     fetch("https://67f4f397913986b16fa27eb8.mockapi.io/customers")
       .then((res) => res.json())
@@ -62,6 +69,16 @@ const DataTable = () => {
       })
       .catch((error) => console.error("Lỗi gọi API:", error));
   }, []);
+
+  const handleCreate = (customer) => {
+    setSelectedCustomer(customer);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedCustomer(null);
+  };
 
   return (
     <div>
@@ -106,6 +123,7 @@ const DataTable = () => {
               <th>Order Value</th>
               <th>Order Date</th>
               <th>Status</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -127,11 +145,19 @@ const DataTable = () => {
                     {c.status}
                   </span>
                 </td>
+                <td>
+                  <button className="iconCreate"  onClick={() => handleCreate(c)}>
+                    <img src={Create} />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </section>
+      {showModal && (
+        <EditModal customer={selectedCustomer} onClose={closeModal} />
+      )}
     </div>
   );
 };
