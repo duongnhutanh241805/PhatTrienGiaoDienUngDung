@@ -1,29 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './component/header/Header'
-import Nav from './component/nav/nav'
+import { useState } from "react";
+
+import "./App.css";
+import Dashboard from "./page/Dashboard/Dashboard";
+
 function App() {
-
-
   return (
     <>
-      <div className='main_app'>
-        <div className='head_main'>
-          <Header></Header>
-        </div>
-        <div className='content_main'>
-          <div className='tren_main'>
-            <Nav></Nav>
-          </div>
-          <div className='duoi_main'>
-
-          </div>
-        </div>
+      <div className="main_app">
+        <Dashboard></Dashboard>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

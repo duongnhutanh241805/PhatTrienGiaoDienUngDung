@@ -1,0 +1,11 @@
+.dashboard-container {
+    width: 85%;
+    margin: auto;
+    display: flex;  
+  }
+.benphai{
+  width: 85%;
+}
+.bentrai{
+  width: 20%;
+}

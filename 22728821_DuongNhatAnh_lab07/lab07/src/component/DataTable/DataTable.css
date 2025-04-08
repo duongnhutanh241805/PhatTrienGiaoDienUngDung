@@ -1,0 +1,55 @@
+.report table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .report th, .report td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .report th {
+    background-color: #f0f2f5;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .status {
+    padding: 6px 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
+  .status.new {
+    background-color: #d0ebff;
+    color: #1c7ed6;
+  }
+  
+  .status.in-progress {
+    background-color: #fff3bf;
+    color: #f59f00;
+  }
+  
+  .status.completed {
+    background-color: #d3f9d8;
+    color: #37b24d;
+  }
+
+  .btn_style{
+    display: flex;
+    width: 23%;
+    justify-content: space-between;
+
+  }
+  .btn_style button{
+    background-color: #ffffff;
+    border: 1px solid #e84d81;
+    color: #e84d81;
+  }

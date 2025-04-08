@@ -1,54 +1,32 @@
-.main_nav{
-  border: 1px solid#b3b3b3a4;
-    border-left: 1px solid#ffffff;
-    height: 100%;
+.sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  color: rgb(118, 117, 117);
+  padding: 20px;
 }
-.khung{
-  border-bottom: 1px solid#b3b3b3a4;
+
+
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+
 }
-.main_find {
-    flex-grow: 1;
-    margin: 15px;
 
- 
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .search-box {
-    padding: 8px;
-    width: 200px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  .card_Tb {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .card {
-    padding: 15px;
-    border-radius: 8px;
-    width: 30%;
-    background: #f1f1f1;
-    margin: 15px;
-  }
-  
-  .turnover {
-    background: #fde2e4;
-
-  }
-  
-  .profit {
-    background: #d1e7dd;
-  }
-  
-  .customers {
-    background: #cfe2ff;
-  }
+.menu li {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+.menu li img{
+  margin-right: 20px;
+}
+.menu li:hover {
+  background-color:  #f84c84;
+  color: white;
+}
