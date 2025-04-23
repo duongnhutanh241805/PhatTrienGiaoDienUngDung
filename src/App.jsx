@@ -78,10 +78,14 @@ function App() {
             </option>
           ))}
         </select>
+        
       </div>
 
       <AddBook onAdd={handleAddBook} />
       <BookList books={filteredBooks} onDelete={handleDeleteBook} />
+      <div className="max-w-4xl mx-auto px-4 text-right text-gray-600 font-medium">
+  Tổng số sách: {filteredBooks.length}
+</div>
     </div>
   );
 }
