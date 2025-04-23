@@ -1,38 +1,17 @@
 import { useState, useEffect } from "react";
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
+import BookItem from "./components/BookItem"; // Import cần thiết
 
 function App() {
   const [books, setBooks] = useState(() => {
     const savedBooks = localStorage.getItem("books");
     return savedBooks ? JSON.parse(savedBooks) : [
-      {
-        id: 1,
-        title: "Đắc Nhân Tâm",
-        author: "Dale Carnegie",
-        genre: "Tâm lý",
-        year: 1936,
-      },
-      {
-        id: 2,
-        title: "Tuổi trẻ đáng giá bao nhiêu",
-        author: "Rosie Nguyễn",
-        genre: "Văn học",
-        year: 2016,
-      },
-      {
-        id: 3,
-        title: "Vũ trụ trong vỏ hạt dẻ",
-        author: "Stephen Hawking",
-        genre: "Khoa học",
-        year: 2001,
-      },
+      { id: 1, title: "Đắc Nhân Tâm", author: "Dale Carnegie", genre: "Tâm lý", year: 1936 },
+      { id: 2, title: "Tuổi trẻ đáng giá bao nhiêu", author: "Rosie Nguyễn", genre: "Văn học", year: 2016 },
+      { id: 3, title: "Vũ trụ trong vỏ hạt dẻ", author: "Stephen Hawking", genre: "Khoa học", year: 2001 },
     ];
   });
-
-  useEffect(() => {
-    localStorage.setItem("books", JSON.stringify(books));
-  }, [books]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("Tất cả");
@@ -62,22 +41,22 @@ function App() {
   const genres = ["Tất cả", "Văn học", "Khoa học", "Công nghệ", "Tâm lý"];
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center mt-6 mb-4 text-blue-600">📚 Ứng dụng Quản lý Sách</h1>
+    <div className="bg-gray-50 min-h-screen p-6">
+      <h1 className="text-4xl font-bold text-center mb-8 text-blue-600">📚 Ứng dụng Quản lý Sách</h1>
 
-      <div className="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row gap-4">
+      {/* Search and Filter */}
+      <div className="max-w-4xl mx-auto mb-6 p-4 flex flex-col sm:flex-row gap-4 mb-6">
         <input
           type="text"
           placeholder="🔍 Tìm kiếm theo tên sách..."
           value={searchTerm}
           onChange={handleSearch}
-          className="w-full sm:w-2/3 p-3 border rounded shadow"
+          className="w-full sm:w-2/3 p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-
         <select
           value={selectedGenre}
           onChange={handleGenreChange}
-          className="w-full sm:w-1/3 p-3 border rounded shadow"
+          className="w-full sm:w-1/3 p-3 border rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {genres.map((genre) => (
             <option key={genre} value={genre}>
@@ -85,14 +64,13 @@ function App() {
             </option>
           ))}
         </select>
-        
       </div>
 
       <AddBook onAdd={handleAddBook} />
-      <BookList books={filteredBooks} onDelete={handleDeleteBook} />
-      <div className="max-w-4xl mx-auto px-4 text-right text-gray-600 font-medium">
-  Tổng số sách: {filteredBooks.length}
-</div>
+
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <BookList books={filteredBooks} onDelete={handleDeleteBook} />
+      </div>
     </div>
   );
 }
