@@ -1,31 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
 
 function App() {
-  const [books, setBooks] = useState([
-    {
-      id: 1,
-      title: "Đắc Nhân Tâm",
-      author: "Dale Carnegie",
-      genre: "Tâm lý",
-      year: 1936,
-    },
-    {
-      id: 2,
-      title: "Tuổi trẻ đáng giá bao nhiêu",
-      author: "Rosie Nguyễn",
-      genre: "Văn học",
-      year: 2016,
-    },
-    {
-      id: 3,
-      title: "Vũ trụ trong vỏ hạt dẻ",
-      author: "Stephen Hawking",
-      genre: "Khoa học",
-      year: 2001,
-    },
-  ]);
+  const [books, setBooks] = useState(() => {
+    const savedBooks = localStorage.getItem("books");
+    return savedBooks ? JSON.parse(savedBooks) : [
+      {
+        id: 1,
+        title: "Đắc Nhân Tâm",
+        author: "Dale Carnegie",
+        genre: "Tâm lý",
+        year: 1936,
+      },
+      {
+        id: 2,
+        title: "Tuổi trẻ đáng giá bao nhiêu",
+        author: "Rosie Nguyễn",
+        genre: "Văn học",
+        year: 2016,
+      },
+      {
+        id: 3,
+        title: "Vũ trụ trong vỏ hạt dẻ",
+        author: "Stephen Hawking",
+        genre: "Khoa học",
+        year: 2001,
+      },
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("Tất cả");
