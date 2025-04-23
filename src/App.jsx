@@ -24,11 +24,16 @@ function App() {
     setBooks([newBook, ...books]);
   };
 
+  const handleDeleteBook = (id) => {
+    const updatedBooks = books.filter((book) => book.id !== id);
+    setBooks(updatedBooks);
+  };
+
   return (
     <div>
       <h1 className="text-3xl font-bold text-center mt-6 mb-4 text-blue-600">📚 Ứng dụng Quản lý Sách</h1>
       <AddBook onAdd={handleAddBook} />
-      <BookList books={books} />
+      <BookList books={books} onDelete={handleDeleteBook} />
     </div>
   );
 }
