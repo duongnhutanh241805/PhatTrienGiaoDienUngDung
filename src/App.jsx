@@ -18,9 +18,17 @@ function App() {
       genre: "Văn học",
       year: 2016,
     },
+    {
+      id: 3,
+      title: "Vũ trụ trong vỏ hạt dẻ",
+      author: "Stephen Hawking",
+      genre: "Khoa học",
+      year: 2001,
+    },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("Tất cả");
 
   const handleAddBook = (newBook) => {
     setBooks([newBook, ...books]);
@@ -34,24 +42,42 @@ function App() {
     setSearchTerm(e.target.value);
   };
 
-  // Lọc theo searchTerm (không phân biệt hoa thường)
-  const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleGenreChange = (e) => {
+    setSelectedGenre(e.target.value);
+  };
+
+  const filteredBooks = books.filter((book) => {
+    const matchesSearch = book.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesGenre = selectedGenre === "Tất cả" || book.genre === selectedGenre;
+    return matchesSearch && matchesGenre;
+  });
+
+  const genres = ["Tất cả", "Văn học", "Khoa học", "Công nghệ", "Tâm lý"];
 
   return (
     <div>
       <h1 className="text-3xl font-bold text-center mt-6 mb-4 text-blue-600">📚 Ứng dụng Quản lý Sách</h1>
 
-      {/* Ô tìm kiếm */}
-      <div className="max-w-4xl mx-auto p-4">
+      <div className="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row gap-4">
         <input
           type="text"
           placeholder="🔍 Tìm kiếm theo tên sách..."
           value={searchTerm}
           onChange={handleSearch}
-          className="w-full p-3 border rounded mb-4 shadow"
+          className="w-full sm:w-2/3 p-3 border rounded shadow"
         />
+
+        <select
+          value={selectedGenre}
+          onChange={handleGenreChange}
+          className="w-full sm:w-1/3 p-3 border rounded shadow"
+        >
+          {genres.map((genre) => (
+            <option key={genre} value={genre}>
+              {genre}
+            </option>
+          ))}
+        </select>
       </div>
 
       <AddBook onAdd={handleAddBook} />
